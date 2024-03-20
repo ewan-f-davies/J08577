@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.4s;
+}
+
+body {
+    margin-left: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+table {
+    width: 100%;
+}
+
+table,
+th,
+td {
+    padding-right: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    font-size: 25px;
+    /* border: 2px solid black; */
+}
+
+th {
+    border: 2px solid black;
+}
+
+td {
+    text-align: center;
+    padding-left: 8px;
+    border-color: rgb(52, 46, 46);
+    border-style: ridge;
+}
+
+
+/* Code taken from https://codepen.io/abdosteif/pen/bRoyMb */
+.nav-container {
+    margin: 0 5% 5% 5%;
+}
+
+/* Navbar section */
+
+.current-page {
+    background-color: rgb(207, 207, 196);
+}
+
+.nav {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    text-align: center;
+    /* Bring the nav to the front so nothing overlaps it */
+    z-index: 1;
+    background-color: rgb(76, 181, 255);
+}
+
+.nav div.page {
+    width: 180px;
+    height: 10px;
+    position: absolute;
+}
+
+.nav div.page a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.8em;
+    text-transform: uppercase;
+}
+
+
+.nav div.main_list {
+    width: 600px;
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+}
+
+.nav div.main_list ul ul {
+    display: none;
+}
+
+.nav div.main_list ul li {
+    width: 150px;
+    height: 65px;
+    background-color: rgb(76, 181, 255);
+}
+
+.nav div.main_list li a {
+    display: block;
+    width: 150px;
+    height: 65px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 50px;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: black;
+    line-height: 65px;
+    text-transform: uppercase;
+}
+
+.nav div.main_list ul li a:hover {
+    background-color: darkgrey;
+}
+
+.nav div.main_list li:hover ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav div.main_list li:hover ul li a {
+    width: 100%;
+    text-align: center;
+    line-height: 1.9em;
+}
+
+.nav div.media_button {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    display: none;
+}
+
+.nav div.media_button button.main_media_button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.nav div.media_button button.main_media_button span {
+    width: 98%;
+    height: 1px;
+    display: block;
+    background-color: black;
+    margin-top: 9px;
+    margin-bottom: 10px;
+}
+
+.nav div.media_button button.main_media_button:hover span:nth-of-type(1) {
+    transform: rotateY(180deg);
+    transition: all 0.5s;
+    background-color: #c0c0c0;
+}
+
+.nav div.media_button button.main_media_button:hover span:nth-of-type(2) {
+    transform: rotateY(180deg);
+    transition: all 0.4s;
+    background-color: #c0c0c0;
+}
+
+.nav div.media_button button.main_media_button:hover span:nth-of-type(3) {
+    transform: rotateY(180deg);
+    transition: all 0.3s;
+    background-color: #c0c0c0;
+}
+
+.nav div.media_button button.active span:nth-of-type(1) {
+    transform: rotate3d(0, 0, 1, 45deg);
+    position: absolute;
+    margin: 0;
+}
+
+.nav div.media_button button.active span:nth-of-type(2) {
+    display: none;
+}
+
+.nav div.media_button button.active span:nth-of-type(3) {
+    transform: rotate3d(0, 0, 1, -45deg);
+    position: absolute;
+    margin: 0;
+}
+
+.nav div.media_button button.active:hover span:nth-of-type(1) {
+    transform: rotate3d(0, 0, 1, 20deg);
+}
+
+.nav div.media_button button.active:hover span:nth-of-type(3) {
+    transform: rotate3d(0, 0, 1, -20deg);
+}
+
+/* Medai qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .container {
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+
+    .container {
+        margin: 0;
+        position: relative;
+    }
+
+    .nav div.page {
+        margin-left: 15px;
+    }
+
+    .nav div.main_list {
+        width: 100%;
+        margin-top: 65px;
+        height: 0px;
+        overflow: hidden;
+    }
+
+    .nav div.show_list {
+        height: 200px;
+    }
+
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 200px;
+        top: 80px;
+        right: 0;
+        left: 0;
+    }
+
+    .nav div.main_list ul li {
+        width: 100%;
+        height: 40px;
+        background-color: rgb(76, 181, 255);
+    }
+
+    .nav div.main_list ul li a {
+        text-align: center;
+        line-height: 40px;
+        width: 100%;
+        height: 40px;
+        display: table;
+    }
+
+    .nav div.main_list ul li:hover {
+        width: 100%;
+    }
+
+    .nav div.main_list ul li:hover ul li {
+        position: relative;
+        width: 100%;
+        display: flex; 
+        flex-direction: column;
+        /* justify-content: space-around; */
+        /* background-color: rgb(76, 181, 255); */
+    }
+
+    .nav div.main_list ul li:hover ul li ul {
+        top: 0;
+    } 
+    
+
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+/* End of code referenced */
+
+.current-page {
+    background-color: rgb(207, 207, 196);
+}
+
+div.drivers {
+    padding-top: 75px;
+}
+
+.center {
+    display: flex;
+    margin: auto;
+    width: 75%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: inline-block;
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+
+.pics {
+    width: 100%;
+    overflow: auto;
+    display: inline-block;
+    margin: 0 20px 0 0;
+    /* Moves the pictures down from the navbar */
+    -webkit-transform: translateY(80px);
+    transform: translateY(80px);
+    /* border: 1px solid rgb(230, 0, 255); */
+}
+
+img.image {
+    display: inline-block;
+    margin-right: 20px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    /* border: 2px solid rgb(78, 15, 227); */
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgb(36, 160, 200);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    border-radius: 50%;
+    opacity: 92.5%;
+}
+
+.container:hover .overlay {
+    bottom: 0;
+    height: 100%;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.team-container {
+    display: inline-block;
+    position: relative;
+    width: 864px;
+    height: 250px;
+    border-radius: 20px;
+    border: 1px solid black;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+}
+
+
+.team-image {
+    display: block;
+    border-radius: 30%;
+    width: 864px;
+    height: 250px;
+}
+
+.team-overlay {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    border-radius: 30%;
+    /* background-color: #008CBA; */
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .2s ease;
+}
+
+.team-container:hover .team-overlay {
+    width: 100%;
+    border-radius: 30%;
+}
+
+.team-text {
+    color: black;
+    font-size: 40px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    border-radius: 30%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.table-center {
+    margin: auto;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.table-header {
+    background-color: rgb(175, 0, 52);
+    border: 1px solid black;
+    color: white;
+}
+
+/* colours for the drivers to indicate
+the teams they are in
+*/
+.redbull {
+    background-color: rgb(25, 115, 204);
+}
+
+.mercedes {
+    background-color: rgb(0, 238, 200);
+}
+
+.ferrari {
+    background-color: rgb(255, 0, 41);
+}
+
+.mclaren {
+    background-color: rgb(255, 120, 0);
+}
+
+.aston {
+    background-color: rgb(0, 100, 92);
+}
+
+.alpine {
+    background-color: rgb(0, 145, 209);
+}
+
+.williams {
+    background-color: rgb(0, 187, 218);
+}
+
+.toro {
+    background-color: rgb(73, 138, 164);
+}
+
+.kick {
+    background-color: rgb(0, 228, 0);
+}
+
+.haas {
+    background-color: rgb(175, 182, 183);
+}
+
+.historic {
+    background-color: rgb(128, 128, 128);
+}
+
+/*Different colour of team colour because it doesn't look nice in the table*/
+.redbull-table {
+    background-color: rgb(74, 158, 212);
+}
+
+.aston-table {
+    background-color: rgb(3, 150, 138);
+}
