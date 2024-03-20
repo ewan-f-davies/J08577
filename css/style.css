@@ -6,8 +6,11 @@
 
 body {
     margin-left: 20px;
-    /* margin-top: 20px; */
     background-color: rgb(255, 255, 255);
+}
+
+header {
+    padding-bottom: 10%;
 }
 
 table {
@@ -380,7 +383,7 @@ img.image {
 
 .team-overlay {
     position: absolute;
-    top: 100px;
+    /* top: 100px; */
     left: 0;
     right: 0;
     border-radius: 30%;
