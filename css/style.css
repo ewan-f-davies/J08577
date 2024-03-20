@@ -6,9 +6,9 @@
 
 body {
     margin-left: 20px;
+    margin-top: 20px;
     background-color: rgb(255, 255, 255);
 }
-
 
 table {
     width: 100%;
@@ -260,7 +260,7 @@ td {
     .nav div.main_list ul li:hover ul li {
         position: relative;
         width: 100%;
-        display: flex; 
+        display: flex;
         flex-direction: column;
         /* justify-content: space-around; */
         /* background-color: rgb(76, 181, 255); */
@@ -269,8 +269,8 @@ td {
     /* this is a comment */
     .nav div.main_list ul li:hover ul li ul {
         top: 0;
-    } 
-    
+    }
+
 
     .nav div.media_button {
         display: block;
