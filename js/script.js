@@ -8,3 +8,11 @@ mediaButton.onclick = function () {
     mainListDiv.classList.toggle("show_list");
     mediaButton.classList.toggle("active");
 };
+
+function dropDown() {
+    if (mediaButton.className === "mediaButton") {
+        mediaButton.className += " responsive";
+    } else {
+        mediaButton.className = "mediaButton";
+    }
+}
